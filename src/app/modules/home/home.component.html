@@ -1,0 +1,36 @@
+<div class="Quote">
+    <button mat-raised-button class="Quote-Add" (click)="addNewQuote()">
+        {{ 'Add new quote' }}
+    </button>
+    <button mat-raised-button class="Quote-Remove" (click)="removeAllQuote()">
+        {{ 'Remove all quotes' }}
+    </button>
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+        <!-- id Column -->
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <!-- description Column -->
+        <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
+            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+        </ng-container>
+
+        <!-- actions Column -->
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-raised-button class="Quote-Remove" (click)="removeQuote(element.id)">
+                    {{ 'Remove' }}
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
+<app-loader *ngIf="isLoading" [isLoading]="isLoading"></app-loader>

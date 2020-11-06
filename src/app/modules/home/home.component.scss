@@ -1,0 +1,21 @@
+table {
+    width: 100%;
+  }
+
+.Quote {
+  .mat-cell {
+    font-family: monospace;
+  }
+  
+  &-Add {
+    margin: 20px 20px 20px 0px;
+    background: #42B983;
+    color: white;
+  }
+
+  &-Remove {
+    margin: 20px 20px 20px 0px;
+    background: #DE1738;
+    color: white;
+  }
+}
