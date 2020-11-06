@@ -3,7 +3,7 @@ leonteq project with SCSS, Routing, and Angular Material. Configured using large
 
 # How to install and run the application ?
 * Clone the repo
-* cchange directory cd ./exercice-1
+* Change directory cd ./exercice-1
 * Install the repo with npm running : 
     npm install
 * Start the server : npm start 
